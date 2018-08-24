@@ -1,0 +1,199 @@
+---
+---
+
+$purple:           #A73250;
+$darker-purple:    darken($purple, 20%);
+$small-breakpoint: 576px;
+$large-breakpoint: 992px;
+
+*, *::before, *::after {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+  width: 100%;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  overflow-x: hidden;
+  min-height: 100vh;
+  font-family: 'Roboto', sans-serif;
+}
+
+.row {
+  display: flex;
+  flex-wrap: wrap;
+  margin-right: -15px;
+  margin-left: -15px;
+  margin-bottom: 1.5rem;
+}
+
+@media (max-width: $small-breakpoint){
+  .col-sm-12 {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+    margin-bottom: 5px;
+  }
+}
+
+.col-4 {
+  flex: 0 0 33.3333333333%;
+  max-width: 0 0 33.3333333333%;
+}
+
+.col-6 {
+  flex: 0 0 50%;
+  max-width: 50%;
+}
+
+.col-8 {
+  flex: 0 0 66.6666666667%;
+  max-width: 66.6666666667%;
+}
+
+.col-4, .col-6, .col-8 {
+  width: 100%;
+  min-height: 1px;
+  position: relative;
+  padding-right: 15px;
+  padding-left: 15px;
+}
+
+.container {
+  width: 100%;
+  padding-left: 15px;
+  padding-right: 15px;
+  margin-left: auto;
+  margin-right: auto;
+
+  @media (min-width: $small-breakpoint){
+    max-width: 540px;
+  }
+
+  @media (min-width: $large-breakpoint){
+    max-width: 960px;
+  }
+}
+
+header {
+  position: relative;
+  background: no-repeat center center;
+  background-attachment: scroll;
+  background-size: cover;
+  background-image: url('../img/header.jpg');
+  color: white;
+  min-height: 33%;
+  margin-bottom: 20px;
+  .header-content {
+    position: relative;
+    text-align: center;
+    padding: 50px 15px 50px;
+    .header-content-inner h1 {
+      font-family: 'Roboto Mono', monospace;
+      font-size: 2rem;
+      @media (min-width: $small-breakpoint){
+        font-size: 3rem;
+      }
+    }
+  }
+}
+
+.tab {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+input.invalid {
+  background-color: #ffdddd;
+}
+
+.form-inline {
+  display: flex;
+  flex-flow: row wrap;
+}
+
+.form-control {
+  display: block;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  border: 1px solid #ced4da;
+  width: 100%;
+  transition: border-color .15s ease-in-out, box-shadow .15s ease-in-out;
+  &:focus {
+    border-color: $purple;
+    box-shadow: 0 0 0 0.1rem rgba($darker-purple,.25);
+    outline: 0;
+  }
+  &:hover {
+    border-color: $purple;
+  }
+}
+
+.form-button {
+  width: 100%;
+  text-align: center;
+  vertical-align: middle;
+  padding: 0.375rem 0.75rem;
+  font-size: 1rem;
+  line-height: 1.5;
+  background-color: $purple;
+  color: #fff;
+  cursor: pointer;
+  outline: none;
+  transition: background-color .15s ease-in-out;
+  &:hover, &:focus {
+    background-color: $darker-purple;
+  }
+}
+
+.form-data-list li {
+  font-family: 'Roboto Mono', monospace;
+  span.name {
+    text-transform: capitalize;
+  }
+}
+
+.card {
+  background-color: $purple;
+  margin-left: 5px;
+  margin-right: 5px;
+  padding: 5px;
+  text-align: center;
+  color: white;
+  transition: background-color .15s ease-in-out;
+  h4.card-title {
+    font-family: 'Roboto Mono', monospace;
+  }
+  &:hover {
+    background-color: $darker-purple;
+  }
+}
+
+// Utilities
+
+.text-center {
+  text-align: center !important;
+}
+
+.mb-1 {
+  margin-bottom: 1rem !important;
+}
+
+.mb-2 {
+  margin-bottom: 2rem !important;
+}
+
+@media (min-width: $small-breakpoint){
+  .pr-sm-0 {
+    padding-right: 0 !important;
+  }
+
+  .pl-sm-0 {
+    padding-left: 0 !important;
+  }
+}

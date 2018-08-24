@@ -8,12 +8,81 @@
     <meta name="author" content="Richard Booth">
     <title>{{ site.title }}</title>
 
-    <script src="https://use.fontawesome.com/ac40f1a7ae.js"></script>
+    <link href="https://fonts.googleapis.com/css?family=Roboto|Roboto+Mono" rel="stylesheet">
     <link href="assets/css/main.css" rel="stylesheet">
   </head>
 
   <body>
-    <!-- content -->
+    <header>
+      <div class="header-content">
+        <div class="header-content-inner">
+          <h1>{{ site.header_text }}</h1>
+        </div>
+      </div>
+    </header>
+
+    <div class="container">
+      <p class="text-center mb-2">
+        {{ page.first_paragraph }}
+      </p>
+
+      <form id="contact-info" class="form-inline mb-2">
+        <div id="tab-step-1" class="tab" data-current-tab="true">
+          <div class="col-8 pr-sm-0 col-sm-12 mb-1">
+             <input name="email" type="text" class="form-control" id="emailInput" placeholder="Enter email address" />
+          </div>
+          <div class="col-4 pl-sm-0 col-sm-12">
+            <button id="step1" type="submit" class="form-button">Next</button>
+          </div>
+        </div>
+        <div id="tab-step-2" class="tab" style="display: none">
+          <div class="col-6 pr-sm-0 col-sm-12 mb-1">
+            <input name="name" type="text" class="form-control" id="nameInput" placeholder="Name" />
+          </div>
+          <div class="col-6 pl-sm-0 col-sm-12 mb-1">
+            <input name="postcode" type="text" class="form-control" id="postcodeInput" placeholder="Postcode" />
+          </div>
+          <div class="col-6 pr-sm-0 col-sm-12 mb-1">
+            <button id="prev" type="submit" class="form-button">Previous</button>
+          </div>
+          <div class="col-6 pl-sm-0 col-sm-12 mb-1">
+            <button id="step2" type="submit" class="form-button">Submit</button>
+          </div>
+        </div>
+      </form>
+
+      <div id="tab-step-3" class="mb-2" style="display: none">
+        <p>{{ page.thank_you_message }}</p>
+        <ul class="form-data-list"></ul>
+      </div>
+
+      <div class="row">
+        <div class="col-4 col-sm-12">
+          <div class="card">
+            <h4 class="card-title">{{ page.card_1_title }}</h4>
+            <p>
+              {{ page.card_1_content }}
+            </p>
+          </div>
+        </div>
+        <div class="col-4 col-sm-12">
+          <div class="card">
+            <h4 class="card-title">{{ page.card_2_title }}</h4>
+            <p>
+              {{ page.card_2_content }}
+            </p>
+          </div>
+        </div>
+        <div class="col-4 col-sm-12">
+          <div class="card">
+            <h4 class="card-title">{{ page.card_3_title }}</h4>
+            <p>
+              {{ page.card_3_content }}
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
     <script src="assets/js/main.js"></script>
